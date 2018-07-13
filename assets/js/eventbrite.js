@@ -2364,7 +2364,7 @@ $("#submitBtn").on("click", function (event) {
                                 
                                 var text1 = "<a href="+u+"> Click Here To Buy Tickets  </a>"
                                
-                                $("#Eventslist > tbody").append("<tr><td>" + n + "</td><td>" + response2.address.address_1 + "</td><td id='min'>" +response2.address.city + "</td><td id='min'>" + text1 + "</td><td id='min'>" + d + "</td><td id='min'>"+response2.address.country+"</td></tr>");
+                                $("#Eventslist > tbody").prepend("<tr><td>" + n + "</td><td>" + response2.address.address_1 + "</td><td id='min'>" +response2.address.city + "</td><td id='min'>" + text1 + "</td><td id='min'>" + d + "</td><td id='min'>"+response2.address.country+"</td></tr>");
 
                                 
                                 }
@@ -2423,5 +2423,7 @@ $("#speechbtn").on("click", function (event) {
 });
 
 $("#clearresult").on("click",function(){
-    $('#Eventslist tbody').remove();
+    $('#Eventslist tbody tr').remove();
+    $("#clearresult").hide();
+    $("#Eventslist").hide();
 });
